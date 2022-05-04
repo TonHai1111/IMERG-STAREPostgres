@@ -20,6 +20,7 @@ def create_db():
         query += "create table general(label integer, time_start timestamp,\
                     time_end timestamp, total_prec float8,\
                     one_stare_cover int8 );"
+        query += "create table us_states(name varchar(40), sids_cover int8[]);"
         print("creating tables...")
         cursor.execute(query)
         print("Details and General tables have been created!\n")
@@ -45,6 +46,7 @@ def drop_db():
         print("Connected!")
         query = "drop table details;"
         query += "drop table general;"
+        query += "drop table us_states;"
         print("dropping tables...")
         cursor.execute(query)
         print("Details and General tables have been dropped!\n")
